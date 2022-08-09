@@ -6,8 +6,13 @@ session_start()
 include_once "../database/connection.php";
 
 $table_name = $_POST['table_name'];
+if($table_name == "admin") {
+    $sql_query = "select * from $table_name where username != 'admin'";
+}
+else{
+    $sql_query = "select * from $table_name order by id";
+}
 
-$sql_query = "select * from $table_name order by id";
 $result = mysqli_query($conn, $sql_query);
 
 if (mysqli_num_rows($result) > 0) {
@@ -17,6 +22,7 @@ if (mysqli_num_rows($result) > 0) {
     }
 
     $conn->close();
+//    var_dump($arr_data);
     echo json_encode($arr_data);
 }
 else {

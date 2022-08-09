@@ -30,7 +30,6 @@ if (isset($_POST['btn_insert'])) {
     $conn->close();
 
     echo json_encode($arr_lecturer);
-//    header("Location: http://localhost/room-usage-display/src/view/dashboard.php?room_name=".$_SESSION["room_name"]);
 }
 else if(isset($_POST['btn_edit'])) {
     $name = $_POST['name'];

@@ -19,7 +19,12 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 
         $_SESSION['room_name'] = $room_name;
 
-        header("Location: http://localhost/room-usage-display/src/view/dashboard.php?room_name=$room_name");
+        if($username == "admin" && $password == "admin") {
+            header("Location: http://localhost/room-usage-display/src/view/admin-dashboard.php?room_name=$room_name");
+        }
+        else {
+            header("Location: http://localhost/room-usage-display/src/view/dashboard.php?room_name=$room_name");
+        }
     }
     else {
         echo "0";
