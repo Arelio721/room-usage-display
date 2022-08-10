@@ -12,6 +12,7 @@ MySQL - 10.4.21-MariaDB : Database - room-usage
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+DROP DATABASE `room-usage`;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`room-usage` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 
 USE `room-usage`;
@@ -41,7 +42,8 @@ CREATE TABLE `admin` (
 /*Data for the table `admin` */
 
 insert  into `admin`(`username`,`password`,`room_name`) values 
-('l304','l304','L-304');
+('l304','l304','L-304'),
+('admin','admin','Admin');
 
 /*Table structure for table `lecturer` */
 
